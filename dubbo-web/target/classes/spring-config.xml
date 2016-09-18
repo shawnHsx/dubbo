@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+   <!-- &lt;!&ndash;true 表示基于类的代理 cglib &ndash;&gt;-->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+
+    <!--用来扫描该包内被@Repository @Service @Controller的注解类，然后注册到工厂中-->
+    <context:component-scan base-package="com.jd.*" />
+
+    <!--告知Spring启用注解驱动。然后Spring会自动为我们注册相关Bean，处理我们的请求。
+        annotation-driven实现类：AnnotationDrivenBeanDefinitionParser，总共注册8个Bean
+
+        1.RequestMappingHandlerMapping：处理@RequestMapping注解
+        2.BeanNameUrlHandlerMapping ：将controller类的名字映射为请求url
+        3.RequestMappingHandlerAdapter：处理@Controller注解的控制器类
+        4.HttpRequestHandlerAdapter：处理继承HttpRequestHandlerAdapter类的控制器类
+        5.SimpleControllerHandlerAdapter：理继承SimpleControllerHandlerAdapter类的控制器 3，4，5确定调用哪个controller的哪个方法处理请求
+        6.ExceptionHandlerExceptionResolver
+        7.ResponseStatusExceptionResolver
+        8.DefaultHandlerExceptionResolver ：6，7，8 处理异常
+    -->
+    <mvc:annotation-driven>
+        <!--重写转JSON方法中日期格式问题-->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <!--customObjectMapper通过注解形注入-->
+                <property name="objectMapper" ref="customObjectMapper"></property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--对静态资源文件访问的处理-->
+    <mvc:default-servlet-handler/>
+
+    <import resource="classpath:spring/spring-*.xml" />
+</beans>

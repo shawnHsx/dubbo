@@ -1,0 +1,6 @@
+<html>
+<body>
+<h2>Hello World! this is first "vm" page  $!{foo}</h2 >
+    #set($nums=[-2 .. 2])
+</body>
+</html>
