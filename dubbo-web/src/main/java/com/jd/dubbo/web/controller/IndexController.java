@@ -1,7 +1,15 @@
 package com.jd.dubbo.web.controller;
 
+import com.jd.dubbo.web.beanScope.PrototypeObj;
+import com.jd.dubbo.web.beanScope.RequestObj;
+import com.jd.dubbo.web.beanScope.SessionObj;
+import com.jd.dubbo.web.beanScope.SingletonObj;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,15 +25,29 @@ import java.util.Map;
 
 /**
  * Created by heshuanxu on 2016/6/3.
+ *
  */
 @Controller
-public class IndexController {
+public class IndexController  {
 
     private final static Logger logger = LoggerFactory.getLogger(IndexController.class);
+
+    @Autowired
+    private RequestObj requestObj;
+    @Autowired
+    private SessionObj sessionObj;
+    @Autowired
+    private PrototypeObj prototypeObj;
+    @Autowired
+    private SingletonObj singletonObj;
+
+
+
 
     @RequestMapping("/dubbo/demo.html")
     public ModelAndView index(HttpServletRequest request){
         logger.info("请求首页面开始+++++++++++++");
+        print();
         ModelAndView view = new ModelAndView("index");
         logger.info("请求首页面结束+++++++++++++");
         return view;
@@ -88,4 +110,21 @@ public class IndexController {
         ModelAndView view =  new ModelAndView(new MappingJacksonJsonView(),map);
         return view;
     }
+
+
+    public void print() {
+        logger.info("first  time applicato");
+        logger.info("first  time singleton is :" + singletonObj);
+        logger.info("second time singleton is :" + singletonObj);
+
+        logger.info("first  time prototype is :" + prototypeObj);
+        logger.info("second time prototype is :" + prototypeObj);
+
+        logger.info("first  time request is :" + requestObj);
+        logger.info("second time request is :" + requestObj);
+
+        logger.info("first  time session is :" + sessionObj);
+        logger.info("second time session is :" + sessionObj);
+    }
+
 }
