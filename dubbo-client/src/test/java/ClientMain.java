@@ -1,10 +1,8 @@
-import com.jd.dubbo.consumer.DemoConsumer;
-import com.jd.dubbo.provider.DemoService;
+import com.semion.dubbo.consumer.DemoConsumer;
+import com.semion.dubbo.provider.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.Date;
 
 /**
  * Created by heshuanxu on 2016/6/2.

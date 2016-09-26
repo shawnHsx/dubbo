@@ -90,7 +90,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.jd.dubbo" level="INFO" additivity="false">
+    <logger name="com.semion.dubbo" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="APP_INFO" />
         <appender-ref ref="APP_ERROR" />

@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--自定义拦截器-->
-    <bean id="springMVCInterceptor" class="com.jd.dubbo.web.filter.SpringMVCInterceptor"/>
+    <bean id="springMVCInterceptor" class="com.semion.dubbo.web.filter.SpringMVCInterceptor"/>
 
     <!--配置拦截器-->
     <mvc:interceptors>
