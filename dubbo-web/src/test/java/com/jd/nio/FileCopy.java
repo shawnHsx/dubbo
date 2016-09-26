@@ -3,7 +3,9 @@ package com.jd.nio;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
@@ -14,6 +16,8 @@ public class FileCopy {
     public static void main(String args[]) throws Exception {
 
         fileCopy();
+        //fileMapping();
+
     }
 
     /**
@@ -67,5 +71,21 @@ public class FileCopy {
         fos.close();
     }
 
+    /**
+     * 文件内存映射
+     * @throws IOException
+     */
+    private static void fileMapping() throws IOException {
 
+        RandomAccessFile raf = new RandomAccessFile("E://myclass/Demo.java", "rw");
+
+        FileChannel fc = raf.getChannel();
+        // 将文件映射到内存中
+        MappedByteBuffer mbb = fc.map(FileChannel.MapMode.READ_WRITE, 0,raf.length());
+        while (mbb.hasRemaining()) {
+            System.out.print((char) mbb.get());
+        }
+        mbb.put(0, (byte) 98); // 修改文件  对MappedByteBuffer的修改就相当于修改文件本身，这样操作的速度是很快的。
+        raf.close();
+    }
 }

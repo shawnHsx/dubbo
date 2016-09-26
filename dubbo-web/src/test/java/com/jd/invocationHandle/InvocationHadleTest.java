@@ -24,7 +24,7 @@ public class InvocationHadleTest {
         Hello hello= (Hello) Class.forName("com.jd.invocationHandle.HelloImpl").newInstance();
 
         // 获取aop切面类（在目标方法前后需要做的动作）
-        InvocationHandler handler = new AopFactory(hello);
+        InvocationHandler handler = new AopFactory(hello);// 目标对象通过构造方法传入代理类
 
         // 生成代理对象
         /**
