@@ -16,8 +16,7 @@ public class ZKAPITest {
 
     private static final int SESSION_TIMEOUT = 10000;
 
-    private static final String ZK_PATH = "/djNode";
-
+    private static final String ZK_PATH = "/wangjian";
     private ZooKeeper zk = null;
 
     private CountDownLatch latch = new CountDownLatch(1);
@@ -58,7 +57,7 @@ public class ZKAPITest {
     }
 
     /**
-     * 创建数据节点
+     * 创建数据节点--持久化节点
      * @param path
      * @param data
      * @return
@@ -121,7 +120,7 @@ public class ZKAPITest {
 
         obj.createConnection("127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183",SESSION_TIMEOUT);
 
-        boolean path = obj.createPath(ZK_PATH, "init node Data");
+        boolean path = obj.createPath(ZK_PATH, "init node Dat 888888888888888888888");
 
 
         if (path){

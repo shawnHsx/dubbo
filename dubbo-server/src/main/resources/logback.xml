@@ -91,7 +91,7 @@
     </appender>
 
     <!-- level:默认为root的打印级别;additivity:是否向上级loger传递打印信息。默认是true。-->
-    <logger name="com.semion.dubbo" level="INFO" additivity="true">
+    <logger name="com.semion.dubbo" level="debug" additivity="true">
         <!--输出到控制台日志 生产环境可关闭-->
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="APP_INFO" />
