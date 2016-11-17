@@ -44,4 +44,5 @@
     <mvc:default-servlet-handler/>
 
     <import resource="classpath:spring/spring-*.xml" />
+    <import resource="classpath:spring/dubbo-server.xml" />
 </beans>
