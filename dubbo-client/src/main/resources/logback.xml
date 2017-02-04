@@ -7,7 +7,7 @@
     </appender>
 
     <appender name="SYS_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/heshuanxu/work/workspace/logs/dubbo-client/system_info.log</file>
+        <file>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/system_info.log</file>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
@@ -15,7 +15,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo-client/system_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/system_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -28,7 +28,7 @@
     </appender>
 
     <appender name="SYS_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/heshuanxu/work/workspace/logs/dubbo-client/system_error.log</file>
+        <file>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/system_error.log</file>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
@@ -36,7 +36,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo-client/system_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/system_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -49,7 +49,7 @@
     </appender>
 
     <appender name="APP_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/heshuanxu/work/workspace/logs/dubbo-client/app_info.log</file>
+        <file>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/app_info.log</file>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
@@ -57,7 +57,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo-client/app_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/app_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -70,7 +70,7 @@
     </appender>
 
     <appender name="APP_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/Users/heshuanxu/work/workspace/logs/dubbo-client/app_error.log</file>
+        <file>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/app_error.log</file>
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
@@ -78,7 +78,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo-client/app_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/Users/heshuanxu/work/workspace/logs/dubbo/dubbo-client/app_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>100MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
